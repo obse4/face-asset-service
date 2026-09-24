@@ -1,0 +1,76 @@
+{
+  "_comment": "权重钉法：下载器必须校验 size 与 sha256，并支持断点续传。换服务器时按本文件离线重建。",
+  "_caution": "实测踩坑：SFace 与 glintr100 首次下载均被截断。截断的 ONNX 会让 OpenCV/ORT 报 'Failed to parse ONNX model / Protobuf parsing failed'，看起来像模型不兼容，实为文件不完整。因此 size+sha256 校验不是可选项。",
+  "generated_by": "deploy/face-assets/PLAN.md §7",
+  "models": [
+    {
+      "name": "face_detection_yunet_2023mar.onnx",
+      "purpose": "人脸检测 + 5 点关键点（同时用于对齐）",
+      "url": "https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx",
+      "mirror_url": "https://github.com/opencv/opencv_zoo/raw/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx",
+      "size": 232589,
+      "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+      "license": "MIT",
+      "license_file": "licenses/LICENSE-YuNet-MIT.txt",
+      "license_source": "https://github.com/opencv/opencv_zoo/blob/main/models/face_detection_yunet/LICENSE",
+      "commercial_ok": true,
+      "upstream": "ShiqiYu/libfacedetection.train",
+      "verified": "2026-09-24 本地实测：sha256 与 opencv_zoo 的 Git-LFS 指针 oid 一致",
+      "default": false
+    },
+    {
+      "name": "face_recognition_sface_2021dec.onnx",
+      "purpose": "人脸 embedding（备用轻量模型，快 4.2 倍但身份不可分）",
+      "url": "https://media.githubusercontent.com/media/opencv/opencv_zoo/main/models/face_recognition_sface/face_recognition_sface_2021dec.onnx",
+      "mirror_url": "https://github.com/opencv/opencv_zoo/raw/main/models/face_recognition_sface/face_recognition_sface_2021dec.onnx",
+      "size": 38696353,
+      "sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79",
+      "license": "Apache-2.0",
+      "license_file": "licenses/LICENSE-SFace-Apache-2.0.txt",
+      "license_source": "https://github.com/opencv/opencv_zoo/blob/main/models/face_recognition_sface/LICENSE",
+      "commercial_ok": true,
+      "embedding_dim": 128,
+      "arch": "MobileFaceNet",
+      "verified": "2026-09-24 本地实测：sha256 与 opencv_zoo 的 Git-LFS 指针 oid 一致；维度 128 由 cv2.FaceRecognizerSF.feature() 实测",
+      "default": false,
+      "selection_evidence": "裕度 -0.025（同一人最低 0.374 < 不同人最高 0.399）→ 不用于身份归并",
+      "cpu_throughput_fps": 36.2
+    },
+    {
+      "name": "glintr100.onnx",
+      "purpose": "人脸 embedding（**默认模型**）",
+      "url": "https://huggingface.co/fal/AuraFace-v1/resolve/main/glintr100.onnx",
+      "size": 260694151,
+      "sha256": "a7933ea5330113b01c9b60351d8f4c33003f145d8470ac5f0e52ee2effe25c60",
+      "license": "Apache-2.0",
+      "license_file": "licenses/LICENSE-AuraFace-Apache-2.0.txt",
+      "license_source": "https://huggingface.co/fal/AuraFace-v1/raw/main/LICENSE.md",
+      "commercial_ok": true,
+      "embedding_dim": 512,
+      "arch": "ResNet100 / ArcFace",
+      "hf_gated": false,
+      "note": "模型卡声明训练数据为 commercial-and-publicly-available sources；是本次调研中唯一由作者明确声明已清商用的候选。许可与维度以外的事实以部署时实测为准。",
+      "verified": "2026-09-24 sha256 取自 HF HEAD 的 x-linked-etag（LFS 文件哈希）",
+      "default": true,
+      "selection_evidence": "实测同一人最低余弦 +0.587 / 不同人最高 +0.209 → 裕度 +0.378；对照 SFace 为 +0.374 / +0.399 → 裕度 **-0.025**（不可分）。见 deploy/face-assets/PLAN.md §4.6",
+      "cpu_throughput_fps": 8.6
+    }
+  ],
+  "excluded": [
+    {
+      "name": "insightface buffalo_l / antelopev2",
+      "reason": "代码 MIT，但权重仅限非商业研究；官方 README 原文与付费商用授权页见 THIRD_PARTY.md。pip install insightface 后调用 FaceAnalysis() 会自动下载这些权重 —— 必须避免。",
+      "commercial_ok": false
+    },
+    {
+      "name": "Idiap/EdgeFace-Base",
+      "reason": "代码 BSD-3 看似理想，但 HF 权重为 CC-BY-NC-SA-4.0，属非商用。",
+      "commercial_ok": false
+    },
+    {
+      "name": "CompreFace",
+      "reason": "代码 Apache-2.0，但其最佳配置依赖 InsightFace 系权重；且发布停滞。",
+      "commercial_ok": false
+    }
+  ]
+}

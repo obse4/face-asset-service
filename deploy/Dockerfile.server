@@ -1,0 +1,40 @@
+# face-assets 服务镜像（CPU 路径）
+#
+# 为什么是 CPU 镜像：实测（Apple M4，作为服务器 144 核 CPU 的下限参照）默认模型 AuraFace 为
+# 8.6 帧/秒、整季约 93 秒；而目标机每卡只剩约 10GB 显存。CPU 路径**占用 0 显存**，
+# 是最理想的邻居行为，同时免除了 ONNX Runtime 与 CUDA/cuDNN 的版本绑定风险。
+# 详见 deploy/face-assets/PLAN.md §5。
+# 基础镜像可用 ARG 覆盖：目标机上已存在 python:3.11-slim 时可直接复用，免去拉取。
+# 默认值保持 3.12 作为仓库的规范值。
+ARG BASE_IMAGE=python:3.12-slim
+FROM ${BASE_IMAGE}
+
+# OpenCV 运行所需的最小系统库（headless 版仍需 libGL 之外的少量依赖；这里按需最小化）
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends libglib2.0-0 curl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# 先装依赖，利用层缓存
+COPY deploy/requirements-api.txt /app/deploy/requirements-api.txt
+RUN pip install --no-cache-dir -r /app/deploy/requirements-api.txt
+
+COPY face_service /app/face_service
+
+# 权重不打进镜像：生产以只读卷挂载 /srv/face-assets/models，
+# 这样换服务器时按 models.lock 重新下载校验即可，镜像本身保持无权重、可公开分发。
+ENV FACE_ASSETS_MODELS_DIR=/srv/face-assets/models \
+    FACE_ASSETS_PORT=8000 \
+    FACE_ASSETS_EMBEDDING_MODEL=auraface \
+    PYTHONUNBUFFERED=1
+
+# CPU 路径下限制线程，避免与同机 ComfyUI/SGLang 抢满整机 CPU（当好邻居）
+ENV OMP_NUM_THREADS=4
+
+EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
+    CMD curl -fsS http://127.0.0.1:8000/health/live || exit 1
+
+CMD ["python", "-m", "face_service.api"]

@@ -1,0 +1,9 @@
+# 「只要速度、不要身份可分性」的精简路径
+#
+# 默认路径（AuraFace）请用 requirements-api.txt（其中已含 onnxruntime）。
+# 仅当明确设置 FACE_ASSETS_EMBEDDING_MODEL=sface 时，才可以省掉 onnxruntime：
+#   pip install fastapi uvicorn numpy opencv-contrib-python-headless
+#
+# 注意：实测 SFace 在本项目素材上的同一人/不同人余弦裕度为负（不可分），
+# 因此该路径**不适合做人物身份归并**，只适合做"有没有脸/脸在哪"这类用途。
+# 依据见 ../deploy/face-assets/PLAN.md §4.6。

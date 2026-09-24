@@ -1,0 +1,18 @@
+# face-assets API 运行依赖（CPU 路径）
+#
+# 默认嵌入模型是 AuraFace(glintr100)，它通过 onnxruntime 直接跑 ONNX，因此 onnxruntime 是必需依赖。
+# YuNet 检测/对齐仍由 OpenCV 原生 API（cv2.FaceDetectorYN）驱动。
+# 若把 FACE_ASSETS_EMBEDDING_MODEL 改成 sface，则 onnxruntime 可以省掉（SFace 走 cv2.FaceRecognizerSF），
+# 但那样会失去身份可分性（见 deploy/face-assets/PLAN.md §4.6）。
+#
+# 版本按部署时实测冻结，避免"今天能跑、明天装出别的版本"。
+fastapi==0.135.1
+uvicorn==0.41.0
+numpy==2.4.6
+# 必须用 headless 版本：容器里不需要 GUI 依赖，能显著减小镜像。
+# 注意 pin 必须用 pip 的四段式版本号（4.13.0.92），不能写 conda 的 cv2.__version__（4.13.0）
+# —— 本次部署第一次构建就栽在这个上：pypi 上不存在 4.13.0.88。改 pin 前先跑 check_pins.py。
+opencv-contrib-python-headless==4.13.0.92
+# CPU 版即可满足默认路径（实测 8.6 帧/秒，整季约 93 秒）。
+# 若将来启用 GPU：改装 onnxruntime-gpu 并注意 ORT 与 CUDA/cuDNN 必须成对锁定（见 PLAN.md §5.3）。
+onnxruntime==1.30.0

@@ -1,0 +1,55 @@
+# face-assets compose 项目 —— 纯增量部署：只新增本服务，不改动其它任何 compose 项目。
+#
+# 运行：cd /opt/face-assets && docker compose up -d
+# 回滚：cd /opt/face-assets && docker compose down   （注意：绝不加 -v）
+#
+# 设计取舍见 deploy/face-assets/PLAN.md：
+#   · CPU-only：默认模型 AuraFace 实测 8.6 帧/秒，整季约 93 秒；**不申请 GPU**，因此占用 0 显存，
+#     对只剩约 10GB/卡 的目标机是最理想的邻居行为。
+#   · 不引入数据库：单进程无状态服务，没有任务队列持久化需求。
+#   · 权重以只读卷挂载，不打进镜像 —— 换服务器时按 models.lock 重建并校验 sha256。
+services:
+  face-assets:
+    image: face-assets:local
+    container_name: face-assets
+    restart: unless-stopped
+    ports:
+      # 绑定到具体网卡地址，与既有服务（8781/8782）保持一致的暴露方式
+      - "192.168.9.21:8783:8000"
+    volumes:
+      - /srv/face-assets/models:/srv/face-assets/models:ro
+      - /data/face-assets/jobs:/data/face-assets/jobs
+      - /data/face-assets/tmp:/data/face-assets/tmp
+    environment:
+      FACE_ASSETS_MODELS_DIR: /srv/face-assets/models
+      # AuraFace 是默认模型：实测 SFace 的同一人/不同人余弦裕度为负（不可分），见 PLAN.md §4.6
+      FACE_ASSETS_EMBEDDING_MODEL: auraface
+      FACE_ASSETS_MIN_SCORE: "0.85"
+      FACE_ASSETS_MIN_FACE_PX: "100"
+      FACE_ASSETS_MAX_FACES: "32"
+      # 当好邻居：显式限制 ONNX Runtime 的 intra-op 线程数。
+      # **必须设置**：容器里 nproc 仍报告宿主核数（144），若交给 ORT 自行决定，
+      # 它会按 144 线程起池却被 cgroup 配额限流，造成超订与吞吐塌陷。
+      # 实测（Xeon 8352V，26 帧的摊薄吞吐，见 PLAN.md §4.7）：
+      #   cpus=6/线程4 → 1.15 帧/秒 ；cpus=12/12 → 3.95 ；cpus=16/12 → 4.47
+      #   cpus=24/16 → 6.66 ；cpus=32/24 → 12.68 ；cpus=48/32 → 18.64 ；不限 → 19.31
+      # 取 32/24：约占整机 22% 核，整季 800 帧约 63 秒。要更快就把两者一起调大。
+      FACE_ASSETS_THREADS: "24"
+      FACE_ASSETS_WARMUP: "1"
+      FACE_ASSETS_LOG_LEVEL: info
+      # 密钥来自 deploy/.env（mode 600），不进仓库
+      FACE_ASSETS_API_KEY: ${FACE_ASSETS_API_KEY:?FACE_ASSETS_API_KEY 未设置：请在 deploy/.env 中配置}
+    # 资源上界：既是自我保护，也是对邻居的承诺（32 核 ≈ 整机 22%，硬上限，绝不吃满 144 核）
+    cpus: 32.0
+    mem_limit: 6g
+    logging:
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/health/live"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 3
