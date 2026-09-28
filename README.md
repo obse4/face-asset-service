@@ -6,6 +6,7 @@
 - 设计基线与全部实测依据：[`docs/deployment-plan.md`](docs/deployment-plan.md)
 - 部署与验收结论：[`deploy/STATUS.md`](deploy/STATUS.md)
 - 贯通演练（时间轴→抽帧→本服务）：[`docs/rehearsal/README.md`](docs/rehearsal/README.md)
+- 源仓库与 fork 清单（钉住的 commit/hash、许可、以及明确不要引入的仓库）：[`docs/source-repos.md`](docs/source-repos.md)
 - 已部署：**http://192.168.9.21:8783**（Swagger 在 `/docs`）
 
 ## 一、先说许可（本项目最容易被忽略、后果最重的一点）
