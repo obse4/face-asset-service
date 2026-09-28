@@ -86,29 +86,31 @@ def group_by_anchor(items: list[dict], threshold: float) -> list[dict]:
                 best_score = score
                 best_group = group
         if best_group is not None and best_score >= threshold:
-            best_group["members"].append({"frame": item["frame"], "quality": item["quality"], "score_to_anchor": round(best_score, 4)})
-            best_group["member_count"] = len(best_group["members"])
+            best_group["members"].append({"id": item["frame"], "quality": item["quality"], "scoreToAnchor": round(best_score, 4)})
+            best_group["memberCount"] = len(best_group["members"])
         else:
             groups.append(
                 {
-                    "group_id": f"cand_{len(groups) + 1:02d}",
-                    "anchor_frame": item["frame"],
-                    "anchor_quality": item["quality"],
+                    "anchorId": item["frame"],
+                    "anchorQuality": item["quality"],
                     "anchor_embedding": item["embedding"],
-                    "nearest_other_score": round(best_score, 4) if best_group is not None else None,
-                    "members": [{"frame": item["frame"], "quality": item["quality"], "score_to_anchor": 1.0}],
-                    "member_count": 1,
+                    "nearestOtherScore": round(best_score, 4) if best_group is not None else None,
+                    "members": [{"id": item["frame"], "quality": item["quality"], "scoreToAnchor": 1.0}],
+                    "memberCount": 1,
                 }
             )
     # 关键设计：**孤类不自动成为新角色**，而是转入人工复核队列。
     # 依据：本演练中帧 763 与青年的相似度是 0.326（卡在 0.35 下）—— 它可能是同一人，
     # 也可能真是新角色；把这种判断留给锚点确认，而不是让算法自动"造"出一个角色。
-    confirmed = [g for g in groups if g["member_count"] > 1]
-    review = [g for g in groups if g["member_count"] == 1]
+    confirmed = [g for g in groups if g["memberCount"] > 1]
+    review = [g for g in groups if g["memberCount"] == 1]
     for group in groups:
         del group["anchor_embedding"]
+        group["requiresHumanConfirmation"] = True
     for index, group in enumerate(confirmed, start=1):
-        group["group_id"] = f"cand_{index:02d}"
+        group["groupId"] = f"cand_{index:02d}"
+    for index, group in enumerate(review, start=1):
+        group["groupId"] = f"review_{index:02d}"
     return confirmed, review
 
 
@@ -209,8 +211,8 @@ def main() -> int:
     linkage_groups = single_linkage_groups(best_faces, args.threshold)
     print(f"  锚点法归并 → {len(anchor_groups)} 个候选角色（≥2 帧），{len(review_queue)} 个孤类转入复核队列")
     for group in anchor_groups:
-        frames = [member["frame"] for member in group["members"]]
-        print(f"    {group['group_id']}: 锚点帧 {group['anchor_frame']}（质量 {group['anchor_quality']}）"
+        frames = [member["id"] for member in group["members"]]
+        print(f"    {group.get('groupId','?')}: 锚点帧 {group['anchorId']}（质量 {group['anchorQuality']}）"
               f" 成员 {len(frames)} 帧 {frames[:8]}{'…' if len(frames) > 8 else ''}")
     print(f"  对照 · 单链接 → {len(linkage_groups)} 类，最大类 {len(linkage_groups[0])} 帧"
           f"（链式传染会把不同角色并进来，故不采用）")

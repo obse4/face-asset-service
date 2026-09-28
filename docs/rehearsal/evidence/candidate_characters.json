@@ -14,186 +14,191 @@
   },
   "candidates": [
     {
-      "group_id": "cand_01",
-      "anchor_frame": 1879,
-      "anchor_quality": 0.8466,
-      "nearest_other_score": null,
+      "anchorId": 1879,
+      "anchorQuality": 0.8466,
+      "nearestOtherScore": null,
       "members": [
         {
-          "frame": 1879,
+          "id": 1879,
           "quality": 0.8466,
-          "score_to_anchor": 1.0
+          "scoreToAnchor": 1.0
         },
         {
-          "frame": 2104,
+          "id": 2104,
           "quality": 0.7908,
-          "score_to_anchor": 0.8118
+          "scoreToAnchor": 0.8118
         },
         {
-          "frame": 1954,
+          "id": 1954,
           "quality": 0.7806,
-          "score_to_anchor": 0.8625
+          "scoreToAnchor": 0.8625
         },
         {
-          "frame": 2029,
+          "id": 2029,
           "quality": 0.7768,
-          "score_to_anchor": 0.798
+          "scoreToAnchor": 0.798
         },
         {
-          "frame": 1773,
+          "id": 1773,
           "quality": 0.7056,
-          "score_to_anchor": 0.6497
+          "scoreToAnchor": 0.6497
         }
       ],
-      "member_count": 5
+      "memberCount": 5,
+      "requiresHumanConfirmation": true,
+      "groupId": "cand_01"
     },
     {
-      "group_id": "cand_02",
-      "anchor_frame": 259,
-      "anchor_quality": 0.6743,
-      "nearest_other_score": 0.2393,
+      "anchorId": 259,
+      "anchorQuality": 0.6743,
+      "nearestOtherScore": 0.2393,
       "members": [
         {
-          "frame": 259,
+          "id": 259,
           "quality": 0.6743,
-          "score_to_anchor": 1.0
+          "scoreToAnchor": 1.0
         },
         {
-          "frame": 943,
+          "id": 943,
           "quality": 0.6316,
-          "score_to_anchor": 0.4451
+          "scoreToAnchor": 0.4451
         },
         {
-          "frame": 868,
+          "id": 868,
           "quality": 0.6159,
-          "score_to_anchor": 0.4582
+          "scoreToAnchor": 0.4582
         },
         {
-          "frame": 345,
+          "id": 345,
           "quality": 0.6011,
-          "score_to_anchor": 0.482
+          "scoreToAnchor": 0.482
         },
         {
-          "frame": 184,
+          "id": 184,
           "quality": 0.5957,
-          "score_to_anchor": 0.8768
+          "scoreToAnchor": 0.8768
         },
         {
-          "frame": 123,
+          "id": 123,
           "quality": 0.5937,
-          "score_to_anchor": 0.4805
+          "scoreToAnchor": 0.4805
         },
         {
-          "frame": 1205,
+          "id": 1205,
           "quality": 0.5762,
-          "score_to_anchor": 0.443
+          "scoreToAnchor": 0.443
         },
         {
-          "frame": 1194,
+          "id": 1194,
           "quality": 0.5743,
-          "score_to_anchor": 0.7036
+          "scoreToAnchor": 0.7036
         },
         {
-          "frame": 638,
+          "id": 638,
           "quality": 0.566,
-          "score_to_anchor": 0.6999
+          "scoreToAnchor": 0.6999
         },
         {
-          "frame": 838,
+          "id": 838,
           "quality": 0.5215,
-          "score_to_anchor": 0.4213
+          "scoreToAnchor": 0.4213
         },
         {
-          "frame": 1069,
+          "id": 1069,
           "quality": 0.497,
-          "score_to_anchor": 0.4868
+          "scoreToAnchor": 0.4868
         },
         {
-          "frame": 0,
+          "id": 0,
           "quality": 0.4843,
-          "score_to_anchor": 0.468
+          "scoreToAnchor": 0.468
         },
         {
-          "frame": 1280,
+          "id": 1280,
           "quality": 0.4587,
-          "score_to_anchor": 0.4575
+          "scoreToAnchor": 0.4575
         },
         {
-          "frame": 1119,
+          "id": 1119,
           "quality": 0.4561,
-          "score_to_anchor": 0.7195
+          "scoreToAnchor": 0.7195
         },
         {
-          "frame": 563,
+          "id": 563,
           "quality": 0.4354,
-          "score_to_anchor": 0.6187
+          "scoreToAnchor": 0.6187
         }
       ],
-      "member_count": 15
+      "memberCount": 15,
+      "requiresHumanConfirmation": true,
+      "groupId": "cand_02"
     },
     {
-      "group_id": "cand_03",
-      "anchor_frame": 643,
-      "anchor_quality": 0.6666,
-      "nearest_other_score": 0.1652,
+      "anchorId": 643,
+      "anchorQuality": 0.6666,
+      "nearestOtherScore": 0.1652,
       "members": [
         {
-          "frame": 643,
+          "id": 643,
           "quality": 0.6666,
-          "score_to_anchor": 1.0
+          "scoreToAnchor": 1.0
         },
         {
-          "frame": 1015,
+          "id": 1015,
           "quality": 0.5549,
-          "score_to_anchor": 0.7683
+          "scoreToAnchor": 0.7683
         },
         {
-          "frame": 718,
+          "id": 718,
           "quality": 0.5178,
-          "score_to_anchor": 0.665
+          "scoreToAnchor": 0.665
         },
         {
-          "frame": 1804,
+          "id": 1804,
           "quality": 0.3883,
-          "score_to_anchor": 0.6545
+          "scoreToAnchor": 0.6545
         },
         {
-          "frame": 1355,
+          "id": 1355,
           "quality": 0.2975,
-          "score_to_anchor": 0.7951
+          "scoreToAnchor": 0.7951
         }
       ],
-      "member_count": 5
+      "memberCount": 5,
+      "requiresHumanConfirmation": true,
+      "groupId": "cand_03"
     }
   ],
   "review_queue": [
     {
-      "group_id": "cand_04",
-      "anchor_frame": 1828,
-      "anchor_quality": 0.5772,
-      "nearest_other_score": 0.2029,
+      "anchorId": 1828,
+      "anchorQuality": 0.5772,
+      "nearestOtherScore": 0.2029,
       "members": [
         {
-          "frame": 1828,
+          "id": 1828,
           "quality": 0.5772,
-          "score_to_anchor": 1.0
+          "scoreToAnchor": 1.0
         }
       ],
-      "member_count": 1
+      "memberCount": 1,
+      "requiresHumanConfirmation": true,
+      "groupId": "review_01"
     },
     {
-      "group_id": "cand_05",
-      "anchor_frame": 763,
-      "anchor_quality": 0.4584,
-      "nearest_other_score": 0.3261,
+      "anchorId": 763,
+      "anchorQuality": 0.4584,
+      "nearestOtherScore": 0.3261,
       "members": [
         {
-          "frame": 763,
+          "id": 763,
           "quality": 0.4584,
-          "score_to_anchor": 1.0
+          "scoreToAnchor": 1.0
         }
       ],
-      "member_count": 1
+      "memberCount": 1,
+      "requiresHumanConfirmation": true,
+      "groupId": "review_02"
     }
   ],
   "single_linkage_comparison": [

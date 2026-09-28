@@ -89,6 +89,22 @@ python3 rehearse_pipeline.py --base-url http://192.168.9.21:8783 --api-key <key>
 等效整季 800 帧 ≈ 44s
 ```
 
+## 四·五、schema 统一（2026-09-28 修正）
+
+本脚本早期产出的候选角色 JSON 用了 `anchor_frame` / `member_count` 等 snake_case 字段，
+而 `dsh-face-assets` 插件产出的是 `anchorId` / `memberCount` —— **同一概念两套 schema**，
+下游（L3 剧本层）消费时会踩坑。已把脚本改为与插件一致的字段名并重跑产物：
+
+| 概念 | 统一后的字段（与插件一致） |
+|---|---|
+| 锚点帧 | `anchorId` |
+| 锚点质量 | `anchorQuality` |
+| 成员 | `members[].id` / `members[].quality` / `members[].scoreToAnchor` |
+| 成员数 | `memberCount` |
+| 分组编号 | `groupId`（候选 `cand_NN`、复核 `review_NN`） |
+
+归并结果本身未变（仍是 3 候选 + 2 复核）。
+
 ## 五、仍需人工/后续处理的事（不要误读本演练的结论）
 
 - **候选 ≠ 身份**。三个候选分组只是"看起来是三个人"，**必须经人工确认并选定锚点图**之后，
