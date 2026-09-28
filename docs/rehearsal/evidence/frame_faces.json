@@ -1,0 +1,455 @@
+[
+  {
+    "frame": 0,
+    "shot_index": 1,
+    "file": "f0000",
+    "faces": [
+      {
+        "quality": 0.4843,
+        "face_px": 126,
+        "det_score": 0.9201,
+        "face_key": "auraface:81f66918bb1323e577ff2593861a788afd12733c"
+      }
+    ]
+  },
+  {
+    "frame": 55,
+    "shot_index": 2,
+    "file": "f0055",
+    "faces": []
+  },
+  {
+    "frame": 123,
+    "shot_index": 3,
+    "file": "f0123",
+    "faces": [
+      {
+        "quality": 0.5937,
+        "face_px": 131,
+        "det_score": 0.9462,
+        "face_key": "auraface:9ce402dd7c8c126c4235349558b5e14aa344bf6d"
+      }
+    ]
+  },
+  {
+    "frame": 184,
+    "shot_index": 4,
+    "file": "f0184",
+    "faces": [
+      {
+        "quality": 0.5957,
+        "face_px": 146,
+        "det_score": 0.9205,
+        "face_key": "auraface:4bdcd3875b061fb0307fed7e9dcc482eb8c61f70"
+      }
+    ]
+  },
+  {
+    "frame": 259,
+    "shot_index": 4,
+    "file": "f0259",
+    "faces": [
+      {
+        "quality": 0.6743,
+        "face_px": 171,
+        "det_score": 0.9242,
+        "face_key": "auraface:4881b813917ccab8881ec98dd34a6ac4ee90f0c2"
+      }
+    ]
+  },
+  {
+    "frame": 268,
+    "shot_index": 5,
+    "file": "f0268",
+    "faces": []
+  },
+  {
+    "frame": 345,
+    "shot_index": 6,
+    "file": "f0345",
+    "faces": [
+      {
+        "quality": 0.6011,
+        "face_px": 259,
+        "det_score": 0.9171,
+        "face_key": "auraface:bae1e116f5b1ac80de8f256dd1889aa5efe15f69"
+      }
+    ]
+  },
+  {
+    "frame": 415,
+    "shot_index": 7,
+    "file": "f0415",
+    "faces": []
+  },
+  {
+    "frame": 481,
+    "shot_index": 8,
+    "file": "f0481",
+    "faces": []
+  },
+  {
+    "frame": 556,
+    "shot_index": 8,
+    "file": "f0556",
+    "faces": []
+  },
+  {
+    "frame": 563,
+    "shot_index": 9,
+    "file": "f0563",
+    "faces": [
+      {
+        "quality": 0.4354,
+        "face_px": 112,
+        "det_score": 0.91,
+        "face_key": "auraface:96d29d9de19fbbf5af529ad9e64824e782aa1181"
+      }
+    ]
+  },
+  {
+    "frame": 638,
+    "shot_index": 9,
+    "file": "f0638",
+    "faces": [
+      {
+        "quality": 0.566,
+        "face_px": 133,
+        "det_score": 0.9174,
+        "face_key": "auraface:4eb533223983413ff783860482805afcf8a97147"
+      }
+    ]
+  },
+  {
+    "frame": 643,
+    "shot_index": 10,
+    "file": "f0643",
+    "faces": [
+      {
+        "quality": 0.6666,
+        "face_px": 269,
+        "det_score": 0.9323,
+        "face_key": "auraface:3e4a44a8a558935e13873a045bf744f2c97ccc13"
+      }
+    ]
+  },
+  {
+    "frame": 718,
+    "shot_index": 10,
+    "file": "f0718",
+    "faces": [
+      {
+        "quality": 0.5178,
+        "face_px": 278,
+        "det_score": 0.9312,
+        "face_key": "auraface:075c987c491851ece33fc8135b035c505936127d"
+      }
+    ]
+  },
+  {
+    "frame": 763,
+    "shot_index": 11,
+    "file": "f0763",
+    "faces": [
+      {
+        "quality": 0.4584,
+        "face_px": 112,
+        "det_score": 0.9477,
+        "face_key": "auraface:c4536f4b6a4d3495c29cf183fe2dfeddcc5e6710"
+      }
+    ]
+  },
+  {
+    "frame": 838,
+    "shot_index": 11,
+    "file": "f0838",
+    "faces": [
+      {
+        "quality": 0.5215,
+        "face_px": 115,
+        "det_score": 0.9486,
+        "face_key": "auraface:1f21e01b6befde2df64d9e887822e68c895b580d"
+      },
+      {
+        "quality": 0.2966,
+        "face_px": 103,
+        "det_score": 0.9423,
+        "face_key": "auraface:7cfdd4f7e2d92724a4498c2bf88c486184625361"
+      }
+    ]
+  },
+  {
+    "frame": 868,
+    "shot_index": 12,
+    "file": "f0868",
+    "faces": [
+      {
+        "quality": 0.6159,
+        "face_px": 334,
+        "det_score": 0.9189,
+        "face_key": "auraface:a57e73b2c345d5b2073202a6c8d3fb85c6b36737"
+      }
+    ]
+  },
+  {
+    "frame": 943,
+    "shot_index": 12,
+    "file": "f0943",
+    "faces": [
+      {
+        "quality": 0.6316,
+        "face_px": 326,
+        "det_score": 0.9208,
+        "face_key": "auraface:1f23ad4bddcdf40e433c8942bd77dc8da7db129a"
+      }
+    ]
+  },
+  {
+    "frame": 1015,
+    "shot_index": 13,
+    "file": "f1015",
+    "faces": [
+      {
+        "quality": 0.5549,
+        "face_px": 394,
+        "det_score": 0.8702,
+        "face_key": "auraface:a73fe73178250d3d127a5b260711e2131683ad11"
+      }
+    ]
+  },
+  {
+    "frame": 1069,
+    "shot_index": 14,
+    "file": "f1069",
+    "faces": [
+      {
+        "quality": 0.497,
+        "face_px": 152,
+        "det_score": 0.9311,
+        "face_key": "auraface:89aac168e44b3ea1a16d29811db105eb3b7e2058"
+      }
+    ]
+  },
+  {
+    "frame": 1119,
+    "shot_index": 15,
+    "file": "f1119",
+    "faces": [
+      {
+        "quality": 0.4561,
+        "face_px": 113,
+        "det_score": 0.9076,
+        "face_key": "auraface:7c9ed36fa23bb08cdcb29482b574b0b05aafa395"
+      }
+    ]
+  },
+  {
+    "frame": 1194,
+    "shot_index": 15,
+    "file": "f1194",
+    "faces": [
+      {
+        "quality": 0.5743,
+        "face_px": 139,
+        "det_score": 0.918,
+        "face_key": "auraface:8a3c06b833ea9b9b8c9f37b050eb316792bd0c45"
+      }
+    ]
+  },
+  {
+    "frame": 1205,
+    "shot_index": 16,
+    "file": "f1205",
+    "faces": [
+      {
+        "quality": 0.5762,
+        "face_px": 305,
+        "det_score": 0.9212,
+        "face_key": "auraface:0f213df46513a9fb1d956f06da3e090789d8c12f"
+      }
+    ]
+  },
+  {
+    "frame": 1280,
+    "shot_index": 16,
+    "file": "f1280",
+    "faces": [
+      {
+        "quality": 0.4587,
+        "face_px": 279,
+        "det_score": 0.931,
+        "face_key": "auraface:09414b14a55e799cbd29868203cb547869e8141f"
+      },
+      {
+        "quality": 0.2851,
+        "face_px": 101,
+        "det_score": 0.9524,
+        "face_key": "auraface:8e1d7f3e52b5efc494409ef29251a9233a7487b6"
+      }
+    ]
+  },
+  {
+    "frame": 1355,
+    "shot_index": 16,
+    "file": "f1355",
+    "faces": [
+      {
+        "quality": 0.2975,
+        "face_px": 104,
+        "det_score": 0.9378,
+        "face_key": "auraface:113dc2ac71ce604509e344a08c5d457ffe88228b"
+      }
+    ]
+  },
+  {
+    "frame": 1385,
+    "shot_index": 17,
+    "file": "f1385",
+    "faces": []
+  },
+  {
+    "frame": 1460,
+    "shot_index": 17,
+    "file": "f1460",
+    "faces": []
+  },
+  {
+    "frame": 1496,
+    "shot_index": 18,
+    "file": "f1496",
+    "faces": []
+  },
+  {
+    "frame": 1571,
+    "shot_index": 18,
+    "file": "f1571",
+    "faces": []
+  },
+  {
+    "frame": 1583,
+    "shot_index": 19,
+    "file": "f1583",
+    "faces": []
+  },
+  {
+    "frame": 1649,
+    "shot_index": 20,
+    "file": "f1649",
+    "faces": []
+  },
+  {
+    "frame": 1689,
+    "shot_index": 21,
+    "file": "f1689",
+    "faces": []
+  },
+  {
+    "frame": 1764,
+    "shot_index": 21,
+    "file": "f1764",
+    "faces": []
+  },
+  {
+    "frame": 1773,
+    "shot_index": 22,
+    "file": "f1773",
+    "faces": [
+      {
+        "quality": 0.7056,
+        "face_px": 380,
+        "det_score": 0.8525,
+        "face_key": "auraface:baf34498178bfac77e65496a77614012cf29ae64"
+      }
+    ]
+  },
+  {
+    "frame": 1804,
+    "shot_index": 23,
+    "file": "f1804",
+    "faces": [
+      {
+        "quality": 0.3883,
+        "face_px": 133,
+        "det_score": 0.93,
+        "face_key": "auraface:19d218ea3ec75c9dfccb7f95998d1d82b108b20b"
+      }
+    ]
+  },
+  {
+    "frame": 1828,
+    "shot_index": 24,
+    "file": "f1828",
+    "faces": [
+      {
+        "quality": 0.5772,
+        "face_px": 150,
+        "det_score": 0.8976,
+        "face_key": "auraface:35eb8777d1fb338f49342619bd4077c07b852a3e"
+      }
+    ]
+  },
+  {
+    "frame": 1879,
+    "shot_index": 25,
+    "file": "f1879",
+    "faces": [
+      {
+        "quality": 0.8466,
+        "face_px": 299,
+        "det_score": 0.9198,
+        "face_key": "auraface:7583c7d0153e826a9bed65e341f8e1433a914911"
+      }
+    ]
+  },
+  {
+    "frame": 1954,
+    "shot_index": 25,
+    "file": "f1954",
+    "faces": [
+      {
+        "quality": 0.7806,
+        "face_px": 285,
+        "det_score": 0.9198,
+        "face_key": "auraface:64a0f08e0fb69bb36e604797f16e47a6e9854c65"
+      }
+    ]
+  },
+  {
+    "frame": 2029,
+    "shot_index": 25,
+    "file": "f2029",
+    "faces": [
+      {
+        "quality": 0.7768,
+        "face_px": 297,
+        "det_score": 0.9112,
+        "face_key": "auraface:90c8fc5a9b8ae708aaaf6867fdd2696575c1ad0a"
+      }
+    ]
+  },
+  {
+    "frame": 2104,
+    "shot_index": 25,
+    "file": "f2104",
+    "faces": [
+      {
+        "quality": 0.7908,
+        "face_px": 293,
+        "det_score": 0.9123,
+        "face_key": "auraface:da86e26513381cdb921f44be761dea3ad327307e"
+      }
+    ]
+  },
+  {
+    "frame": 2154,
+    "shot_index": 26,
+    "file": "f2154",
+    "faces": []
+  },
+  {
+    "frame": 2229,
+    "shot_index": 26,
+    "file": "f2229",
+    "faces": []
+  }
+]

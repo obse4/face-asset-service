@@ -1,0 +1,543 @@
+[
+ {
+  "shot_index": 1,
+  "start_frame": 0,
+  "file": "shotstart_001.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.9201464653015137,
+    "box": [
+     34,
+     186,
+     126,
+     149
+    ],
+    "box_px": 18878,
+    "sharpness": 150.2,
+    "yaw_proxy": -0.019,
+    "quality": 8.575
+   }
+  ]
+ },
+ {
+  "shot_index": 2,
+  "start_frame": 55,
+  "file": "shotstart_002.png",
+  "transition": "new_start",
+  "faces": []
+ },
+ {
+  "shot_index": 3,
+  "start_frame": 123,
+  "file": "shotstart_003.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.9461866617202759,
+    "box": [
+     215,
+     162,
+     131,
+     173
+    ],
+    "box_px": 22776,
+    "sharpness": 476.9,
+    "yaw_proxy": 0.037,
+    "quality": 11.047
+   }
+  ]
+ },
+ {
+  "shot_index": 4,
+  "start_frame": 184,
+  "file": "shotstart_004.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.9205120801925659,
+    "box": [
+     210,
+     141,
+     146,
+     171
+    ],
+    "box_px": 25146,
+    "sharpness": 197.8,
+    "yaw_proxy": -0.019,
+    "quality": 9.311
+   }
+  ]
+ },
+ {
+  "shot_index": 5,
+  "start_frame": 268,
+  "file": "shotstart_005.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.8831877708435059,
+    "box": [
+     227,
+     240,
+     79,
+     159
+    ],
+    "box_px": 12717,
+    "sharpness": 326.4,
+    "yaw_proxy": 2.243,
+    "quality": 9.117
+   }
+  ]
+ },
+ {
+  "shot_index": 6,
+  "start_frame": 345,
+  "file": "shotstart_006.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.9171275496482849,
+    "box": [
+     288,
+     111,
+     259,
+     471
+    ],
+    "box_px": 122554,
+    "sharpness": 46.4,
+    "yaw_proxy": -0.052,
+    "quality": 7.819
+   }
+  ]
+ },
+ {
+  "shot_index": 7,
+  "start_frame": 415,
+  "file": "shotstart_007.png",
+  "transition": "hard_cut",
+  "faces": [
+   {
+    "score": 0.9364272952079773,
+    "box": [
+     229,
+     139,
+     72,
+     93
+    ],
+    "box_px": 6840,
+    "sharpness": 765.4,
+    "yaw_proxy": 0.02,
+    "quality": 10.359
+   },
+   {
+    "score": 0.696559727191925,
+    "box": [
+     479,
+     544,
+     64,
+     85
+    ],
+    "box_px": 5551,
+    "sharpness": 140.9,
+    "yaw_proxy": -0.607,
+    "quality": 5.612
+   }
+  ]
+ },
+ {
+  "shot_index": 8,
+  "start_frame": 481,
+  "file": "shotstart_008.png",
+  "transition": "hard_cut",
+  "faces": [
+   {
+    "score": 0.9246057271957397,
+    "box": [
+     335,
+     309,
+     51,
+     74
+    ],
+    "box_px": 3848,
+    "sharpness": 285.0,
+    "yaw_proxy": -0.12,
+    "quality": 8.143
+   },
+   {
+    "score": 0.6368369460105896,
+    "box": [
+     328,
+     509,
+     60,
+     63
+    ],
+    "box_px": 3813,
+    "sharpness": 104.5,
+    "yaw_proxy": -0.301,
+    "quality": 4.615
+   }
+  ]
+ },
+ {
+  "shot_index": 9,
+  "start_frame": 563,
+  "file": "shotstart_009.png",
+  "transition": "hard_cut",
+  "faces": [
+   {
+    "score": 0.9099748730659485,
+    "box": [
+     206,
+     194,
+     112,
+     142
+    ],
+    "box_px": 15945,
+    "sharpness": 240.0,
+    "yaw_proxy": 0.086,
+    "quality": 9.109
+   }
+  ]
+ },
+ {
+  "shot_index": 10,
+  "start_frame": 643,
+  "file": "shotstart_010.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.9323287010192871,
+    "box": [
+     146,
+     183,
+     269,
+     407
+    ],
+    "box_px": 109809,
+    "sharpness": 74.9,
+    "yaw_proxy": 0.041,
+    "quality": 8.836
+   }
+  ]
+ },
+ {
+  "shot_index": 11,
+  "start_frame": 763,
+  "file": "shotstart_011.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.9477159976959229,
+    "box": [
+     161,
+     134,
+     112,
+     150
+    ],
+    "box_px": 16930,
+    "sharpness": 171.3,
+    "yaw_proxy": -0.014,
+    "quality": 8.962
+   },
+   {
+    "score": 0.9508525133132935,
+    "box": [
+     414,
+     174,
+     92,
+     131
+    ],
+    "box_px": 12189,
+    "sharpness": 124.6,
+    "yaw_proxy": -0.446,
+    "quality": 8.155
+   }
+  ]
+ },
+ {
+  "shot_index": 12,
+  "start_frame": 868,
+  "file": "shotstart_012.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.918921709060669,
+    "box": [
+     110,
+     175,
+     334,
+     466
+    ],
+    "box_px": 156009,
+    "sharpness": 43.0,
+    "yaw_proxy": -0.024,
+    "quality": 7.843
+   }
+  ]
+ },
+ {
+  "shot_index": 13,
+  "start_frame": 1015,
+  "file": "shotstart_013.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.870189368724823,
+    "box": [
+     88,
+     320,
+     394,
+     466
+    ],
+    "box_px": 184070,
+    "sharpness": 27.0,
+    "yaw_proxy": -0.017,
+    "quality": 6.628
+   }
+  ]
+ },
+ {
+  "shot_index": 14,
+  "start_frame": 1069,
+  "file": "shotstart_014.png",
+  "transition": "hard_cut",
+  "faces": [
+   {
+    "score": 0.931098461151123,
+    "box": [
+     285,
+     28,
+     152,
+     203
+    ],
+    "box_px": 30934,
+    "sharpness": 60.7,
+    "yaw_proxy": -0.027,
+    "quality": 7.486
+   }
+  ]
+ },
+ {
+  "shot_index": 15,
+  "start_frame": 1119,
+  "file": "shotstart_015.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.9076188206672668,
+    "box": [
+     217,
+     146,
+     113,
+     130
+    ],
+    "box_px": 14853,
+    "sharpness": 288.8,
+    "yaw_proxy": -0.089,
+    "quality": 9.322
+   }
+  ]
+ },
+ {
+  "shot_index": 16,
+  "start_frame": 1205,
+  "file": "shotstart_016.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.9211850762367249,
+    "box": [
+     104,
+     171,
+     305,
+     443
+    ],
+    "box_px": 135420,
+    "sharpness": 39.7,
+    "yaw_proxy": -0.072,
+    "quality": 7.61
+   }
+  ]
+ },
+ {
+  "shot_index": 17,
+  "start_frame": 1385,
+  "file": "shotstart_017.png",
+  "transition": "new_start",
+  "faces": []
+ },
+ {
+  "shot_index": 18,
+  "start_frame": 1496,
+  "file": "shotstart_018.png",
+  "transition": "new_start",
+  "faces": []
+ },
+ {
+  "shot_index": 19,
+  "start_frame": 1583,
+  "file": "shotstart_019.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.6141866445541382,
+    "box": [
+     231,
+     288,
+     80,
+     117
+    ],
+    "box_px": 9470,
+    "sharpness": 2179.8,
+    "yaw_proxy": -0.128,
+    "quality": 8.154
+   }
+  ]
+ },
+ {
+  "shot_index": 20,
+  "start_frame": 1649,
+  "file": "shotstart_020.png",
+  "transition": "hard_cut",
+  "faces": [
+   {
+    "score": 0.8026329874992371,
+    "box": [
+     107,
+     74,
+     411,
+     526
+    ],
+    "box_px": 216505,
+    "sharpness": 56.8,
+    "yaw_proxy": 0.039,
+    "quality": 7.547
+   }
+  ]
+ },
+ {
+  "shot_index": 21,
+  "start_frame": 1689,
+  "file": "shotstart_021.png",
+  "transition": "new_start",
+  "faces": []
+ },
+ {
+  "shot_index": 22,
+  "start_frame": 1773,
+  "file": "shotstart_022.png",
+  "transition": "hard_cut",
+  "faces": [
+   {
+    "score": 0.8524577617645264,
+    "box": [
+     113,
+     87,
+     380,
+     519
+    ],
+    "box_px": 197728,
+    "sharpness": 147.6,
+    "yaw_proxy": 0.024,
+    "quality": 9.806
+   }
+  ]
+ },
+ {
+  "shot_index": 23,
+  "start_frame": 1804,
+  "file": "shotstart_023.png",
+  "transition": "hard_cut",
+  "faces": [
+   {
+    "score": 0.9300362467765808,
+    "box": [
+     57,
+     256,
+     133,
+     198
+    ],
+    "box_px": 26506,
+    "sharpness": 42.7,
+    "yaw_proxy": 0.077,
+    "quality": 6.75
+   },
+   {
+    "score": 0.9214518666267395,
+    "box": [
+     392,
+     307,
+     73,
+     104
+    ],
+    "box_px": 7732,
+    "sharpness": 68.8,
+    "yaw_proxy": 0.093,
+    "quality": 6.605
+   }
+  ]
+ },
+ {
+  "shot_index": 24,
+  "start_frame": 1828,
+  "file": "shotstart_024.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.897590160369873,
+    "box": [
+     16,
+     258,
+     150,
+     181
+    ],
+    "box_px": 27278,
+    "sharpness": 182.1,
+    "yaw_proxy": 0.032,
+    "quality": 9.009
+   },
+   {
+    "score": 0.9062879681587219,
+    "box": [
+     393,
+     312,
+     72,
+     96
+    ],
+    "box_px": 6937,
+    "sharpness": 177.2,
+    "yaw_proxy": 0.123,
+    "quality": 7.836
+   }
+  ]
+ },
+ {
+  "shot_index": 25,
+  "start_frame": 1879,
+  "file": "shotstart_025.png",
+  "transition": "new_start",
+  "faces": [
+   {
+    "score": 0.9198465347290039,
+    "box": [
+     132,
+     142,
+     299,
+     456
+    ],
+    "box_px": 136907,
+    "sharpness": 224.7,
+    "yaw_proxy": 0.012,
+    "quality": 11.12
+   }
+  ]
+ },
+ {
+  "shot_index": 26,
+  "start_frame": 2154,
+  "file": "shotstart_026.png",
+  "transition": "new_start",
+  "faces": []
+ }
+]

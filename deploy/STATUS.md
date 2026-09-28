@@ -4,7 +4,7 @@
 部署期间既有服务（MOSS 8781、OmniShotCut 8782、flashhead 8790、MiniMax-H3 8188/8288/8388/8488、
 MellowDesign 8080/8780/3000、Mihomo）**全程保持运行且健康检查为 200**，容器清单只新增 `face-assets` 一个。
 
-设计基线与全部实测依据见 `../../../deploy/face-assets/PLAN.md`。
+设计基线与全部实测依据见本仓库 [`docs/deployment-plan.md`](../docs/deployment-plan.md)。
 
 ## 1. 来源与镜像
 
@@ -96,6 +96,16 @@ onnxruntime providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
 整季 800 帧 ≈ 42s
 ```
 
+**规模化验证（等效整季量级，2026-09-24 追加）**：同一批 42 帧连续 20 轮 = **840 帧**：
+
+```
+合计 840 帧 / 46.58s = 持续 18.03 帧/秒
+首轮 2.46s → 末轮 2.35s（无退化）
+内存 485.7 → 486.1 MiB（+0.4MB，无泄漏迹象）
+容器重启 0 次，健康状态 healthy
+```
+
+
 ## 5. 资源与邻居性
 
 | 项 | 值 |
@@ -130,7 +140,8 @@ onnxruntime providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
 
 - **长时间稳定性已做初步验证，但未做 24 小时级**：10 轮 260 帧持续测试显示吞吐无退化、
   内存仅 +1.7MB（无泄漏迹象）、容器零重启；但未观测小时级或跨天运行。
-- **未真跑整季 800 帧批次**：42s 是按 260 帧持续实测线性外推，未实际提交过 800 帧的批次请求。
+- **整季量级已实跑**：840 帧连续批次实测 46.58s / 18.03 帧/秒（见 §4），不再是外推。
+  但仍未跑"20 集各自独立批次"的真实编排形态（那是编排层的事）。
 - **未做并发压测**：多个客户端同时调用时的排队行为未测；当前实现是同步处理、无微批处理
   （PLAN §5.4 的微批属后续优化）。
 - **未验证视频解码路径**：本服务只接受图像帧或 base64，抽帧由上游 ffmpeg 负责。
@@ -138,6 +149,19 @@ onnxruntime providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
   本次是传输而非下载；换机复刻时需先确认外网可达性）。
 - **动画素材未验证**：若剧集为动画，ArcFace 系模型（含 AuraFace）在风格化人脸上会退化，
   需先用 200 帧样本检查聚类纯度（PLAN §4.6 已记录该风险）。
+
+## 7b. L0→L1→L2 贯通演练（与服务配套的时间轴链路）
+
+2026-09-24 追加：用 `episode_008` 把 P0 时间轴与本服务接起来跑通（脚本与证据见
+本仓库 [`docs/rehearsal/`](../docs/rehearsal/)）。42 帧（按策略确定性抽帧）→ 27 帧过门控 →
+锚点法归并出 **3 个候选角色**，经肉眼确认恰好对应剧里三位真实角色（老人 / 青年 / 女性）。
+
+演练暴露两种失效模式，已写入 PLAN §4.8 并改了设计：
+① 监视器屏幕里的人脸能过质量门控但 embedding 无意义（帧 1828）；
+② 全局阈值会漏并同一人（帧 763 对青年仅 +0.326）。
+→ 孤类不再自动成为新角色，而是进人工复核队列（本次恰好隔离出这两个问题帧）。
+
+**注意：候选分组不是身份定论**，必须人工确认并选定锚点图后才成为角色记录。
 
 ## 8. 运维
 
@@ -171,4 +195,4 @@ python3 deploy/verify_service.py --base-url http://192.168.9.21:8783 \
 | `/opt/face-assets/deploy/verification/build.log` | 最终构建日志 |
 | `/opt/face-assets/deploy/verification/image-id.txt` | 最终镜像 sha256 |
 | `/data/face-assets/tmp/acceptance-frames/` | 26 个真实镜头起点帧（验收输入） |
-| `../../../deploy/face-assets/verification/` | 本机侧证据：检测质量、聚类对比、模型裕度对比、对照帧 |
+| [`docs/verification/`](../docs/verification/) | 本机侧证据：检测质量、聚类对比、模型裕度对比、对照样本 |

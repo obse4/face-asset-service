@@ -3,8 +3,9 @@
 短剧投放素材流水线 **L2（资产层）**的基础服务：从关键帧里做人脸**检测 + 5 点对齐 + 质量打分 + embedding**，
 为"哪些帧有清晰人脸""同一角色跨镜头/跨集归并"提供候选证据。
 
-- 设计基线与全部实测依据：`../deploy/face-assets/PLAN.md`（本仓库同级目录）
-- 部署与验收结论：`deploy/STATUS.md`
+- 设计基线与全部实测依据：[`docs/deployment-plan.md`](docs/deployment-plan.md)
+- 部署与验收结论：[`deploy/STATUS.md`](deploy/STATUS.md)
+- 贯通演练（时间轴→抽帧→本服务）：[`docs/rehearsal/README.md`](docs/rehearsal/README.md)
 - 已部署：**http://192.168.9.21:8783**（Swagger 在 `/docs`）
 
 ## 一、先说许可（本项目最容易被忽略、后果最重的一点）
